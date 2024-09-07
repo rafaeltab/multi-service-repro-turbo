@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "build": "rm -rf dist && tsc",
-    "generate_sdk": "rm -rf src && openapi-generator-cli generate -g typescript-fetch -o src -i openapi.json"
+    "generate_sdk": "cp ../api/openapi.json openapi.json && rm -rf src && openapi-generator-cli generate -g typescript-fetch -o src -i openapi.json"
   },
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^2.13.5",

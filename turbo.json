@@ -5,9 +5,6 @@
     "generate_sdk": {
       "dependsOn": [
         "^generate_openapi"
-      ],
-      "inputs": [
-        "openapi.json"
       ]
     },
     "build": {

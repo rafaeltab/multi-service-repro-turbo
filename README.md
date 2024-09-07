@@ -94,6 +94,7 @@ I also included a Makefile, because it's very nice.
 5. `turbo run build` --> only 1/25 cached tasks (a polyfill package)
 6. `turbo run build` --> full turbo
 7. Change one character in the `services/a/infra/src/index.ts` file
-8. `turbo run build generate_sdk generate_metadata generate_openapi --only` --> only 1/25 cached tasks (a polyfill package)
-9. `turbo run build` --> full turbo
-10. Try anything you like to make it work :)
+8. `turbo run build generate_sdk generate_metadata generate_openapi --only --filter=@multi-service-repro/service-a-*` --> 0/6 cached tasks
+9. `turbo run build` --> 2/25 cached
+10. `turbo run build` --> full turbo
+11. Try anything you like to make it work :)

@@ -9,7 +9,7 @@
   "scripts": {
     "build": "nest build",
     "generate_metadata": "ts-node src/generate_metadata.ts",
-    "generate_openapi": "ts-node src/generate_openapi.ts && cp openapi.json ../sdk/openapi.json",
+    "generate_openapi": "ts-node src/generate_openapi.ts",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
