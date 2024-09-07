@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/package.json",
-  "name": "@multi-service-repro/service-a-sdk",
+  "name": "@multi-service-repro/service-b-sdk",
   "version": "0.0.1",
   "scripts": {
     "build": "rm -rf dist && tsc",
@@ -10,7 +10,7 @@
     "@openapitools/openapi-generator-cli": "^2.13.5",
     "@types/request": "^2.48.12",
     "request": "^2.88.2",
-    "@multi-service-repro/service-a-api": "workspace:*"
+    "@multi-service-repro/service-b-api": "workspace:*"
   },
   "main": "./dist/index.js",
   "devDependencies": {

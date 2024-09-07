@@ -1,5 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
   "tasks": {
     "generate_sdk": {
       "dependsOn": [
@@ -35,6 +36,13 @@
       ],
       "outputs": [
         "openapi.json"
+      ]
+    },
+    "start": {
+      "interactive": true,
+      "cache": false,
+      "dependsOn": [
+        "build"
       ]
     }
   }

@@ -1,11 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/package.json",
-  "name": "@multi-service-repro/service-a-api",
+  "name": "@multi-service-repro/service-d-api",
   "version": "0.0.1",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
-  "main": "./dist/main.js",
   "scripts": {
     "build": "nest build",
     "generate_metadata": "ts-node src/generate_metadata.ts",
@@ -29,7 +28,7 @@
     "@nestjs/swagger": "^7.4.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
-    "@multi-service-repro/service-a-infra": "workspace: *",
+    "@multi-service-repro/service-d-infra": "workspace: *",
     "@multi-service-repro/sdk-polyfill": "workspace: *"
   },
   "devDependencies": {

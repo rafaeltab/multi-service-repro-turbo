@@ -1,10 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/package.json",
-  "name": "@multi-service-repro/service-a-infra",
+  "name": "@multi-service-repro/sdk-polyfill",
   "version": "0.0.1",
   "scripts": {
     "build": "tsc"
   },
-  "dependencies": {},
+  "dependencies": {
+    "node-fetch": "2.7.0"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "2.6.11"
+  },
   "main": "./dist/index.js"
 }

@@ -1,1 +1,1 @@
-export const thisIsAnExample = "This is what is actually returned from the api";
+export const thisIsAnExample = "This is what is actually returned from the apr";

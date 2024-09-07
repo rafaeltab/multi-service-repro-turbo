@@ -1,10 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/package.json",
-  "name": "@multi-service-repro/service-a-infra",
+  "name": "@multi-service-repro/service-d-infra",
   "version": "0.0.1",
   "scripts": {
     "build": "tsc"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@multi-service-repro/service-c-sdk": "workspace:*"
+  },
   "main": "./dist/index.js"
 }
