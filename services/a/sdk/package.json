@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/package.json",
+  "name": "@multi-service-repro/service-a-sdk",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "tsc",
+    "generate_sdk": "openapi-generator-cli generate -g typescript-node -o src -i openapi.json"
+  },
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.13.5",
+    "@types/request": "^2.48.12",
+    "request": "^2.88.2"
+  },
+  "exports": {
+    "api": {
+      "default": "./dist/api.js",
+      "types": "./dist/api.d.ts"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.1"
+  }
+}

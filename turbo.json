@@ -1,0 +1,41 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "generate_sdk": {
+      "dependsOn": [
+        "^generate_openapi"
+      ],
+      "inputs": [
+        "openapi.json"
+      ]
+    },
+    "build": {
+      "dependsOn": [
+        "^build",
+        "generate_sdk",
+        "generate_metadata"
+      ]
+    },
+    "generate_metadata": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "src/**/*.ts",
+        "!src/metadata.ts"
+      ],
+      "outputs": [
+        "src/metadata.ts"
+      ]
+    },
+    "generate_openapi": {
+      "dependsOn": [
+        "build",
+        "generate_metadata"
+      ],
+      "outputs": [
+        "openapi.json"
+      ]
+    }
+  }
+}
