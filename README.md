@@ -1,6 +1,6 @@
 # Multiple service reproduction for turborepo
 
-This reproduction is meant to illustrate that a change in a package used by one service can cause a rebuild in many other services. This repository is an extreme case where the dependency is completely linear.
+This reproduction is meant to illustrate that a change in a package used by one service can cause a rebuild in many other services.
 
 ```mermaid
 flowchart LR
@@ -8,6 +8,63 @@ flowchart LR
   service_c --> service_b
   service_b --> service_a
 ```
+
+## Scope
+
+This repository is an extreme case where the dependency is completely linear.
+The APIs are also very minimal, in reality there would be many endpoints calling many other APIs, and services.
+In reality many different kinds of communication might also be involved such as RPC, Kafka, GraphQl, and more, this repository only has HTTP.
+
+A more realistic example might look more a little like this:
+
+```mermaid
+flowchart TD
+  gateway
+  payment
+  account
+  stock
+  catalog
+  marketing
+  admin
+  user
+  order
+  kafka
+
+  gateway --> account
+  gateway --> stock
+  gateway --> order
+  gateway --> catalog
+
+  gateway --> admin
+  gateway --> user
+
+  order --> account
+  order --> payment
+  order --> stock
+
+  order --> kafka
+  payment --> kafka
+  kafka --> stock
+  kafka --> marketing
+
+  account --> user
+  account --> admin
+
+  catalog --> stock
+
+  admin --> user
+  marketing --> user
+```
+
+Yet, even in this example, there are some long chains.
+A change to the user service, that requires no change in any other service, would result in many unnecessary rebuilds, and deploys:
+- marketing
+- admin
+- account
+- gateway
+- kafka
+- payment
+- order
 
 ## Introduction
 
